@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}">
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{asset "/favicon.ico"}}">
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" href="{{asset "css/main.css"}}">
+
+    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    {{!-- Main header display on All Pages --}}
+    {{> "header"}}
+
+    {{!-- Main content --}}
+    <div class="lupho-wrapper">
+      {{{body}}}
+    </div>
+
+    {{!-- Main footer --}}
+    {{> "footer"}}
+
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{ghost_foot}}
+
+    {{!-- Fitvids makes video embeds responsive and awesome --}}
+    <script src="{{asset "js/jquery.fitvids.js"}}"></script>
+
+    {{!-- Masonry.js makes responsive masonry layout --}}
+    <script src="{{asset "js/masonry.js"}}"></script>
+
+    {{!-- Imagesloaded help loading image before render layout --}}
+    <script src="{{asset "js/imagesloaded.js"}}"></script>
+
+    {{!-- Infinite Scroll help loading post --}}
+    <script src="{{asset "js/infinitescroll.js"}}"></script>
+
+    {{!-- Owl carousel for featured posts on homepage --}}
+    <script src="{{asset "js/owl.carousel.min.js"}}"></script>
+
+    {{!-- Search system for blog --}}
+    <script src="{{asset "js/ghostHunter.js"}}"></script>
+
+    {{!-- Prism help highlight code --}}
+    <script src="{{asset "js/prism.js"}}"></script>
+
+    {{!-- The main JavaScript file for Cle --}}
+    <script src="{{asset "js/index.js"}}"></script>
+</body>
+</html>

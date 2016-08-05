@@ -1,0 +1,58 @@
+// Brandon Text
+// ----------------------------------------
+
+// Brandon Text font regular
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonText-Regular', 400, normal);
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonText-RegularItalic', normal, italic);
+
+
+// Brandon Text font thin
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonText-Thin', 100, normal);
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonText-ThinItalic', 100, italic);
+
+// Brandon Text font light
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonText-Light', 300, normal);
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonText-lightItalic', 300, italic);
+
+// Brandon Text font medium
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonText-Medium', 500, normal);
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonText-MediumItalic', 500, italic);
+
+// Brandon Text font bold
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonText-Bold', bold, normal);
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonTest-BoldItalic', bold, italic);
+
+// Brandon Text font black
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonTest-Black', 900, normal);
+@include font-face('Brandon Text', '../fonts/Brandon/hinted-BrandonTest-BlackItalic', 900, italic);
+
+// FF Tisa
+// ----------------------------------------
+
+// FF Tisa font regular
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT', 400, normal);
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-Ita', 400, italic);
+
+// FF Tisa font light
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-Light', 300, normal);
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-LightIta', 300, italic);
+
+// FF Tisa font thin
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-Thin', 100, normal);
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-ThinIta', 100, italic);
+
+// FF Tisa font medium
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-Medi', 500, normal);
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-MediIta', 500, italic);
+
+// FF Tisa font xbold
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-Xbold', 800, normal);
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-XboldIta', 800, italic);
+
+// FF Tisa font bold
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-Bold', bold, normal);
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-BoldIta', bold, italic);
+
+// FF Tisa font black
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-Black', 900, normal);
+@include font-face('Tisa', '../fonts/Tisa/hinted-TisaOT-BlackIta', 900, italic);

@@ -1,0 +1,135 @@
+{{!< default}}
+
+{{!-- The comment above "< default" means - insert everything in this file into
+    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+{{!-- Post header --}}
+<header class="main-header post-head {{#if image}}" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url({{image}}){{else}}no-cover{{/if}}">
+    <div class="post-header">
+      <div class="section">
+        <span>{{tags}}</span>
+
+        <h1>{{title}}</h1>
+
+        <section class="post-meta">
+            <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+        </section>
+      </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    <article class="{{post_class}} post-wrapper section">
+
+        {{!-- Post content --}}
+        <section class="post-content column column--main">
+            {{content}}
+        </section>
+
+        <aside class="post-sidebar column column--sidebar">
+
+          {{!-- Everything inside the #author tags pulls data from the author --}}
+          {{#author}}
+
+            <section class="author-wrapper">
+              <div class="author">
+                <div class="author-image">
+                  {{#if image}}
+                      <div class="minilogo" style="background-image: url('{{image}}')"></div>
+                  {{/if}}
+
+                  <div>
+                      <span><a href="{{url}}">{{name}}</a></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="author-bio">
+                <p>{{bio}}</p>
+              </div>
+            </section>
+
+          {{/author}}
+
+          {{!-- Social sharing --}}
+          <section class="share">
+              <a class="icon-facebook" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+                  onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                  <span>
+                    <svg class="facebook" xmlns="http://www.w3.org/2000/svg" viewBox="-943 525 32 32">
+                        <path d="M-929.6 541h-2.2v-3.4h2.2v-2.7c0-2.5 1.4-3.8 4.6-3.8h3v3.5h-2.3c-.8 0-1 .3-1 1.1v1.9h3.3l-.3 3.4h-3v10h-4.3v-10z"></path>
+                    </svg>
+                  </span>
+                  Share
+              </a>
+
+              <a class="icon-twitter" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                  onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                  <span>
+                    <svg class="twitter" xmlns="http://www.w3.org/2000/svg" viewBox="-943 525 32 32">
+                        <path d="M-929.3 549c-2.1 0-4-.6-5.7-1.7 2 .2 3.9-.3 5.5-1.6-1.6 0-3-1.1-3.4-2.6.6.1 1.1.1 1.7-.1-1.8-.4-3-2-3-3.8.5.3 1.1.5 1.7.5-1.6-1.1-2.1-3.3-1.1-5 1.8 2.3 4.5 3.8 7.6 4-.5-2.4 1.2-4.6 3.6-4.6 1.1 0 2 .5 2.7 1.2.8-.2 1.6-.5 2.3-.9-.3.9-.9 1.6-1.6 2.1.7-.1 1.5-.3 2.1-.6-.5.8-1.1 1.4-1.8 2 .1 5.1-3.8 11.1-10.6 11.1z"></path>
+                    </svg>
+                  </span>
+                  Tweet
+              </a>
+
+              <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                  onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                  <span>
+                    <svg class="google" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #fff;
+                                    opacity: 0;
+                                }
+                            </style>
+                        </defs>
+                        <rect class="cls-1" width="32" height="32"></rect>
+                        <path d="M24,15.47a10,10,0,0,0-.13-1H16.17q0,1.59,0,3.19h4.45A3.85,3.85,0,0,1,19,20.17h0a4.68,4.68,0,0,1-1.8.71,5.29,5.29,0,0,1-1.95,0,4.86,4.86,0,0,1-1.82-.79,5.07,5.07,0,0,1-1.79-2.28l-0.08-.22h0a4.92,4.92,0,0,1,0-3.17,5.1,5.1,0,0,1,1.18-1.92,4.8,4.8,0,0,1,4.84-1.26,4.4,4.4,0,0,1,1.76,1l1.5-1.5c0.26-.27.54-0.53,0.79-0.8h0A7.93,7.93,0,0,0,19,8.33a8.27,8.27,0,0,0-5.5,0l-0.19.07a8.22,8.22,0,0,0-4.44,4,8.08,8.08,0,0,0-.71,2.05,8.17,8.17,0,0,0,5.89,9.5,8.74,8.74,0,0,0,4.18,0,7.2,7.2,0,0,0,5.41-5.13A9.39,9.39,0,0,0,24,15.47Z"></path>
+                    </svg>
+                  </span>
+                  +1
+              </a>
+          </section>
+
+          {{!-- Email subscribe form at the bottom of the sidebar --}}
+          {{#if @labs.subscribers}}
+          <section class="gh-subscribe">
+              <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
+              <p>Get the latest posts delivered right to your inbox. Don't worry, we don't spam your inbox.</p>
+              {{subscribe_form placeholder="Your email address"}}
+              <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+          </section>
+          {{/if}}
+
+        </aside>
+
+    </article>
+
+    {{!-- Links to Previous/Next posts --}}
+    <div class="read-next">
+        {{#next_post}}
+        <div class="column column--duo read-next-story {{#if image}}" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url({{image}}){{else}}no-cover{{/if}}">
+            <a href="{{url}}">
+                <h5>{{title}}</h5>
+                <p>{{excerpt words="19"}}&hellip;</p>
+            </a>
+        </div>
+        {{/next_post}}
+
+        {{#prev_post}}
+        <div class="column column--duo read-next-story prev {{#if image}}" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url({{image}}){{else}}no-cover{{/if}}">
+            <a href="{{url}}">
+                <h5>{{title}}</h5>
+                <p>{{excerpt words="19"}}&hellip;</p>
+            </a>
+        </div>
+        {{/prev_post}}
+    </div>
+</main>
+
+{{/post}}

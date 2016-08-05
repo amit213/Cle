@@ -1,0 +1,15 @@
+{{!-- Load more post --}}
+<div class="full-post">
+  <div class="svg-wrapper">
+    {{#if next}}
+      <a href="{{page_url next}}">
+        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect class="shape" height="40" width="150" />
+          <div class="text">
+            <a href=""><span class="spot"></span>More post</a>
+          </div>
+        </svg>
+      </a>
+    {{/if}}
+  </div>
+</div>

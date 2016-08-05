@@ -1,0 +1,14 @@
+// SCSS Tags
+// ----------------------------------------
+
+.vertical {
+  @include center(y);
+  font-family: unquote(map-get($headingtype, font-family));
+  position: absolute;
+  width: 100%;
+  text-align: center;
+
+  h1 {
+    color: $white;
+  }
+}

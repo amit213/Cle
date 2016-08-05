@@ -1,0 +1,60 @@
+// SCSS Carousel
+// ----------------------------------------
+
+.features-post {
+  position: relative;
+  box-shadow: $image-box-shadow;
+
+  .card-hero {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+
+    .card-hero__content {
+      @include center(xy);
+
+      @include md(break-3) {
+        width: 75%;
+      }
+
+      position: absolute;
+      color: $white;
+      font-family: unquote(map-get($headingtype, font-family));
+      width: 95%;
+      text-align: center;
+
+      h3 {
+        color: $white;
+      }
+    }
+  }
+
+  .carousel-nav {
+    display: none;
+  }
+
+  @include md(break-2) {
+    .carousel-nav {
+      @include center(y);
+      display: block;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+
+      .carousel-next {
+        float: right;
+      }
+
+      span {
+        cursor: pointer;
+      }
+
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}

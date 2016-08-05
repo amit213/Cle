@@ -1,0 +1,41 @@
+{{!-- This is the post loop - each post will be output using this markup --}}
+{{#foreach posts}}
+<article class="{{post_class}} column column--trio card card-blog">
+  {{!-- Card image --}}
+  <div class="card-image">
+    <a href="{{url}}">
+      {{#if image}}
+        <img class="img" src="{{image}}">
+        <div class="card-title">
+            {{title}}
+        </div>
+      {{else}}
+        <div class="card-title-sub">
+            <h4>{{title}}</h4>
+        </div>
+      {{/if}}
+    </a>
+  </div>
+
+  {{!-- Card content --}}
+  <div class="card-content">
+    <h6 class="category">{{tags}}</h6>
+    <p class="card-description">
+      {{excerpt words="26"}}
+    </p>
+  </div>
+
+  {{!-- Card footer --}}
+  <footer class="card-footer">
+    <div class="card-author">
+      {{#if author.image}}
+          <div class="minilogo" style="background-image: url('{{author.image}}')"></div>
+      {{/if}}
+
+      <div>
+          <span>{{author}}</span>
+      </div>
+    </div>
+  </footer>
+</article>
+{{/foreach}}

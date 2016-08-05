@@ -1,0 +1,105 @@
+// SCSS Variables
+// ----------------------------------------
+
+// Color scheme
+$blue: #109af7;
+$black: #333;
+$white: #fff;
+$grey: #9eabb3;
+$lighten-black: rgba(0, 0, 0, 0);
+$light-black: rgba(0, 0, 0, .2);
+$dark-white: rgba($white, 0);
+
+// Background color
+$background-color: #f3f9fe;
+$background-code: #f5f2f0;
+$footer-color: #9f9f9f;
+
+// Socials color
+$twitter: #50abf1;
+$facebook: #3b599a;
+$google: #dd4b39;
+$rss: #e77b39;
+
+// Text shadow
+$text-shadow: rgba(33, 33, 33, .5);
+
+// Box shadow
+$header-box-shadow: 0 1px 1px rgba(0, 0, 0, .08);
+$image-box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+$card-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+
+// Border radius
+$image-radius: 6px;
+$circle-radius: 50%;
+
+// Breakpoint sizes from px to ems. Add more values here to add more breakpoints.
+$breakpoints: (
+  break-0: 0,    // 0px Mobile first
+  break-1: 640,  // 640px ~ Small tablet up
+  break-2: 800,  // 800px ~ Large tablet up
+  break-3: 1024, // 1024px ~ Desktop up
+  break-4: 1600  // 1600px ~ Large desktop up
+) !default;
+
+// Root font-sizes for each breakpoint. Set to half desired line-height of body-text.
+$rootsizes: (
+  rootsize-0: 12, // 24px line-height body text
+  rootsize-1: 14, // 28px line-height body text
+  rootsize-2: 15, // 30px line-height body text
+  rootsize-3: 17, // 34px line-height body text
+  rootsize-4: 19  // 24px line-height body text
+) !default;
+
+// Set the optimum line-lenght for your text (based on typeface).
+// Aim for 75 - 100 characters a line when possible, at smaller sizes type size is more important.
+$measures: (
+  measure-0: 500, // 500px wide
+  measure-1: 550, // 550px wide
+  measure-2: 600, // 600px wide
+  measure-3: 680, // 680px wide
+  measure-4: 750  // 750px wide
+) !default;
+
+// Set the max-widths for containers (based on design).
+$maxwidths: (
+  width-0: 500,  // 500px wide
+  width-1: 600,  // 600px wide
+  width-2: 800,  // 800px wide
+  width-3: 1100, // 1100px wide
+  width-4: 1300  // 1300px wide
+) !default;
+
+// Gutter widths
+$gutterwidths: (
+  small: 1rem,
+  medium: 2rem,
+  large: 4rem
+) !default;
+
+// Add typefaces here.
+// Add weight and style details too.
+$bodytype: (
+  font-family: 'Tisa, serif',
+  regular: 400,
+  bold: 700,
+  italic: italic,
+  cap-height: .82
+) !default;
+
+$headingtype: (
+  font-family: 'Brandon Text, sans-serif',
+  regular: 400,
+  bold: 700,
+  cap-height: .65
+) !default;
+
+$monospacetype: (
+  font-family: 'monospace',
+  regular: 400,
+  cap-height: .68
+) !default;
+
+// Header size
+$header-height-small: 60px;
+$header-height: 80px;

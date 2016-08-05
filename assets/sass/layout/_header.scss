@@ -1,0 +1,228 @@
+// SCSS Header
+// ----------------------------------------
+
+.lp-auto-hide-header {
+  @include clearfix;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height-small;
+  background-color: $white;
+  box-shadow: $header-box-shadow;
+  // Force Hardware Acceleration
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform .5s;
+
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
+
+  @include md(break-3) {
+    height: $header-height;
+  }
+}
+
+.lp-auto-hide-header .logo,
+.lp-auto-hide-header .nav-trigger {
+  @include center(y);
+  position: absolute;
+}
+
+.lp-auto-hide-header .logo {
+  left: 5%;
+
+  a,
+  img {
+    display: block;
+  }
+
+  a {
+    h3 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.lp-auto-hide-header .nav-trigger {
+  // Vertically align its content
+  display: table;
+  height: 100%;
+  padding: 0 1em;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: $black;
+  font-weight: bold;
+  right: 0;
+  border-left: 1px solid shade($white, 5%);
+
+  span {
+    // Vertically align inside parent element
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  em,
+  em::after,
+  em::before {
+    // This is the menu icon
+    display: block;
+    position: relative;
+    height: 2px;
+    width: 22px;
+    background-color: $black;
+    backface-visibility: hidden;
+  }
+
+  em {
+    // This is the menu central line
+    margin: 16px auto 14px;
+    transition: background-color .2s;
+  }
+
+  em::after,
+  em::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    transition: transform .2s;
+  }
+
+  em::before {
+    // This is the menu icon top line
+    transform: translateY(-6px);
+  }
+
+  em::after {
+    transform: translateY(6px);
+  }
+
+  @include md(break-3) {
+    display: none;
+  }
+}
+
+.lp-auto-hide-header.nav-open .nav-trigger {
+  em {
+    // transform menu icon into a 'X' icon
+    background-color: $dark-white;
+  }
+
+  em::before {
+    // Rotate top line
+    transform: rotate(-45deg);
+  }
+
+  em::after {
+    transform: rotate(45deg);
+  }
+}
+
+.lp-primary-nav {
+  display: inline-block;
+  float: right;
+  height: 100%;
+  padding-right: 5%;
+
+  > ul {
+    position: absolute;
+    z-index: 2;
+    top: $header-height-small;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    display: none;
+    box-shadow: 0 14px 20px $light-black;
+
+    a {
+      // Target primary-nav links
+      display: block;
+      height: 50px;
+      line-height: 50px;
+      padding-left: 5%;
+      color: $black;
+      font-family: unquote(map-get($headingtype, font-family));
+      font-size: 1rem;
+      border-top: 1px solid shade($white, 5%);
+    }
+  }
+
+  @include md(break-3) {
+    // Vertically align its content
+    display: table;
+
+    > ul {
+      @include clearfix;
+      // Vertically align inside parent element
+      display: table-cell;
+      vertical-align: middle;
+      // Reset mobile style
+      position: relative;
+      width: auto;
+      top: 0;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+
+      li {
+        display: inline-block;
+        float: left;
+        margin-right: 1.5rem;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      a {
+        // Reset mobile style
+        height: auto;
+        line-height: normal;
+        padding: 0;
+        border: 0;
+        position: relative;
+      }
+
+      a::before {
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        content: '';
+        margin: auto;
+        width: 0;
+        height: 3px;
+        background-color: $blue;
+        visibility: hidden;
+        opacity: 0;
+
+        transition: width 200ms ease-in-out;
+      }
+
+      .nav-current a::before {
+        width: 50%;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      a:hover::before {
+        width: 50%;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.nav-open .lp-primary-nav ul,
+.lp-primary-nav ul:target {
+  @include md(break-3) {
+    display: table-cell;
+  }
+  // Show primary nav - mobile only
+  // :target is used to show navigation on no-js devices
+  display: block;
+}

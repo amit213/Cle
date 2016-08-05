@@ -1,0 +1,12 @@
+// SCSS function
+// ----------------------------------------
+
+// Function shade
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+// Function tint
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
