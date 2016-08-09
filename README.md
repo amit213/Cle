@@ -61,5 +61,9 @@ Open your terminal (Linux) or CMD(Windows)
 * [PrismJS](http://prismjs.com/)
 * [Fitvid](http://fitvidsjs.com/)
 
+## Checkout my other theme on Creative Market
+* [Alesto - The Minimalist Ghost Theme](https://creativemarket.com/phongtruong/701189-Alesto-The-Minimalist-Ghost-Theme)
+* [Azure - Modern Ghost Theme](https://creativemarket.com/phongtruong/748618-Azure-Modern-Ghost-Theme)
+
 ## Copyright & License
 Copyright (c) 2016 Phong Truong - Released under the [MIT license](https://github.com/phongtruongg/Cle/blob/master/LICENSE.md).
