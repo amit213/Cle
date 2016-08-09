@@ -86,6 +86,10 @@
 					$(".search-results").removeClass("results-hide");
 				}
 		});
+
+    // Responsive video
+    $(".post-content").fitVids();
+    
 	});
 
 	var mainHeader = $('.lp-auto-hide-header'),
